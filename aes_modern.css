@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+body {
+    background-color: #0f0f13;
+    color: #e2e2e2;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: #ff8a00;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #1a1a24;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8b8b9e;
+    font-weight: 600;
+    border-bottom: 2px solid #2a2a35;
+    background-color: #111118;
+}
+
+td {
+    padding: 12px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #2a2a35;
+}
+
+tr {
+    background-color: transparent;
+}
+
+tr:hover td {
+    background-color: #252533;
+    color: #ffffff;
+}
+
+/* Left highlight on hover (Fallback for box-shadow) */
+tbody tr:hover td:first-child {
+    border-left: 4px solid #ff8a00;
+}
+
+/* Top 3 Ranks (First Column) */
+tbody tr:nth-child(2) td:first-child {
+    color: #FFD700;
+    font-size: 18px;
+}
+
+tbody tr:nth-child(3) td:first-child {
+    color: #E3E3E3;
+    font-size: 17px;
+}
+
+tbody tr:nth-child(4) td:first-child {
+    color: #CD7F32;
+    font-size: 16px;
+}
+
+/* Top 3 Player Names with Stars */
+tbody tr:nth-child(2) td:nth-child(2) {
+    color: #FFD700;
+    font-weight: 800;
+}
+
+tbody tr:nth-child(3) td:nth-child(2) {
+    color: #E3E3E3;
+    font-weight: 800;
+}
+
+tbody tr:nth-child(4) td:nth-child(2) {
+    color: #CD7F32;
+    font-weight: 800;
+}
+
+/* Default Name Color */
+td:nth-child(2) {
+    color: #ffffff;
+}
+
+/* Skill Icons */
+#Lm,
+#L,
+#Lp {
+    color: #aaaaaa;
+}
+
+#Lm::before {
+    content: "• ";
+    color: #777777;
+}
+
+#L::before {
+    content: "• ";
+    color: #aaaaaa;
+}
+
+#Lp::before {
+    content: "• ";
+    color: #cccccc;
+}
+
+#Mm,
+#M,
+#Mp {
+    color: #55ff55;
+}
+
+#Mm::before {
+    content: "• ";
+    color: #22aa22;
+}
+
+#M::before {
+    content: "• ";
+    color: #55ff55;
+}
+
+#Mp::before {
+    content: "• ";
+    color: #88ff88;
+}
+
+#Hm,
+#H,
+#Hp {
+    color: #ffff55;
+}
+
+#Hm::before {
+    content: "• ";
+    color: #aaaa22;
+}
+
+#H::before {
+    content: "• ";
+    color: #ffff55;
+}
+
+#Hp::before {
+    content: "• ";
+    color: #ffff88;
+}
+
+#Pm,
+#P,
+#Pp {
+    color: #ff5555;
+}
+
+#Pm::before {
+    content: "• ";
+    color: #aa2222;
+}
+
+#P::before {
+    content: "• ";
+    color: #ff5555;
+}
+
+#Pp::before {
+    content: "• ";
+    color: #ff8888;
+}
+
+#G {
+    color: #ff55ff;
+    font-weight: 800;
+}
+
+#G::before {
+    content: "★ ";
+    color: #ff55ff;
+}
+
+/* Specific elements from aes_fork.css */
+.q,
+#q {
+    border: 1px solid #4a4945;
+}
+
+.b,
+#b {
+    background-color: #2a2a2a;
+}
+
+.iN {
+    color: #FF0000;
+}
+
+.iY {
+    color: #008000;
+}
