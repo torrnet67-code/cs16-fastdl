@@ -9,9 +9,9 @@
     --border-color: rgba(255, 255, 255, 0.05);
     
     /* Rank Colors */
-    --rank-1: #FFD700;
-    --rank-2: #E3E3E3;
-    --rank-3: #CD7F32;
+    --rank-1: #FFD700; /* Золото */
+    --rank-2: #E3E3E3; /* Срібло */
+    --rank-3: #CD7F32; /* Бронза */
 }
 
 body {
@@ -83,60 +83,53 @@ tbody tr:hover td:first-child, tr:hover td:first-child {
     box-shadow: inset 4px 0 0 var(--accent);
 }
 
-/* Top 3 Ranks */
-tbody tr:nth-child(2) {
-    color: var(--rank-1);
-}
-tbody tr:nth-child(3) {
-    color: var(--rank-2);
-}
-tbody tr:nth-child(4) {
-    color: var(--rank-3);
-}
+/* Top 3 Ranks (First Column) */
+tbody tr:nth-child(2) td:first-child { color: var(--rank-1); text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); font-size: 18px; }
+tbody tr:nth-child(3) td:first-child { color: var(--rank-2); text-shadow: 0 0 10px rgba(227, 227, 227, 0.5); font-size: 17px; }
+tbody tr:nth-child(4) td:first-child { color: var(--rank-3); text-shadow: 0 0 10px rgba(205, 127, 50, 0.5); font-size: 16px; }
 
-tbody tr:nth-child(2) td:first-child {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    font-size: 18px;
-}
-tbody tr:nth-child(3) td:first-child {
-    text-shadow: 0 0 10px rgba(227, 227, 227, 0.5);
-    font-size: 17px;
-}
-tbody tr:nth-child(4) td:first-child {
-    text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
-    font-size: 16px;
-}
+/* Top 3 Player Names with Stars (Replacing Image Medals) */
+tbody tr:nth-child(2) td:nth-child(2) { color: var(--rank-1); font-weight: 800; }
+tbody tr:nth-child(2) td:nth-child(2)::before { content: "★ "; }
+
+tbody tr:nth-child(3) td:nth-child(2) { color: var(--rank-2); font-weight: 800; }
+tbody tr:nth-child(3) td:nth-child(2)::before { content: "★ "; }
+
+tbody tr:nth-child(4) td:nth-child(2) { color: var(--rank-3); font-weight: 800; }
+tbody tr:nth-child(4) td:nth-child(2)::before { content: "★ "; }
+
+/* Default Name Color */
+td:nth-child(2) { color: #fff; }
+
+/* Skill Icons (Replacing Images with Colors and Dots) */
+#Lm, #L, #Lp { color: #aaaaaa; }
+#Lm::before { content: "• "; color: #777; }
+#L::before  { content: "• "; color: #aaa; }
+#Lp::before { content: "• "; color: #ccc; }
+
+#Mm, #M, #Mp { color: #55ff55; }
+#Mm::before { content: "• "; color: #22aa22; }
+#M::before  { content: "• "; color: #55ff55; }
+#Mp::before { content: "• "; color: #88ff88; }
+
+#Hm, #H, #Hp { color: #ffff55; }
+#Hm::before { content: "• "; color: #aaaa22; }
+#H::before  { content: "• "; color: #ffff55; }
+#Hp::before { content: "• "; color: #ffff88; }
+
+#Pm, #P, #Pp { color: #ff5555; }
+#Pm::before { content: "• "; color: #aa2222; }
+#P::before  { content: "• "; color: #ff5555; }
+#Pp::before { content: "• "; color: #ff8888; }
+
+#G { color: #ff55ff; text-shadow: 0 0 5px #ff55ff; font-weight: 800; }
+#G::before { content: "★ "; color: #ff55ff; }
 
 /* Specific elements from aes_fork.css */
 .q, #q { border: 1px solid #4a4945; }
 .b, #b { background: #2a2a2a; }
 .iN { color: #FF0000; }
 .iY { color: #008000; }
-
-/* Skill Icons */
-#Lm { text-indent: 16px; background: url(skill/Lm.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#L { text-indent: 16px; background: url(skill/L.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Lp { text-indent: 16px; background: url(skill/Lp.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Mm { text-indent: 16px; background: url(skill/Mm.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#M { text-indent: 16px; background: url(skill/M.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Mp { text-indent: 16px; background: url(skill/Mp.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Hm { text-indent: 16px; background: url(skill/Hm.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#H { text-indent: 16px; background: url(skill/H.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Hp { text-indent: 16px; background: url(skill/Hp.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Pm { text-indent: 16px; background: url(skill/Pm.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#P { text-indent: 16px; background: url(skill/P.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#Pp { text-indent: 16px; background: url(skill/Pp.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-#G { text-indent: 16px; background: url(skill/G.png) no-repeat 0 50%; padding: 1px; font-size: 12px; }
-
-tbody tr:nth-child(2) td:nth-child(2) {
-    background: url(skill/gold.png) 90% 50% no-repeat;
-}
-tbody tr:nth-child(3) td:nth-child(2) {
-    background: url(skill/silver.png) 90% 50% no-repeat;
-}
-tbody tr:nth-child(4) td:nth-child(2) {
-    background: url(skill/bronse.png) 90% 50% no-repeat;
-}
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
