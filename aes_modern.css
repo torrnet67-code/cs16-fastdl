@@ -1,26 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
-:root {
-    --bg-dark: #0f0f13;
-    --bg-panel: #1a1a24;
-    --text-main: #e2e2e2;
-    --text-muted: #8b8b9e;
-    --accent: #ff8a00;
-    --border-color: rgba(255, 255, 255, 0.05);
-    
-    /* Rank Colors */
-    --rank-1: #FFD700; /* Золото */
-    --rank-2: #E3E3E3; /* Срібло */
-    --rank-3: #CD7F32; /* Бронза */
-}
-
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
+    background-color: #0f0f13;
+    color: #e2e2e2;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 20px;
-    -webkit-font-smoothing: antialiased;
 }
 
 h2 {
@@ -31,21 +16,14 @@ h2 {
     letter-spacing: 2px;
     margin-top: 10px;
     margin-bottom: 25px;
-    color: transparent;
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: #ff8a00;
 }
 
 table {
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
     border-collapse: collapse;
-    background: var(--bg-panel);
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    background-color: #1a1a24;
 }
 
 th {
@@ -53,86 +31,180 @@ th {
     padding: 15px;
     font-size: 13px;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: #8b8b9e;
     font-weight: 600;
-    letter-spacing: 1px;
-    border-bottom: 2px solid var(--border-color);
-    background-color: rgba(0,0,0,0.2);
+    border-bottom: 2px solid #2a2a35;
+    background-color: #111118;
 }
 
 td {
     padding: 12px 15px;
     font-size: 15px;
     font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    border-bottom: 1px solid #2a2a35;
 }
 
 tr {
-    transition: all 0.2s ease;
     background-color: transparent;
 }
 
 tr:hover td {
-    background-color: rgba(255, 255, 255, 0.03);
-    color: #fff;
+    background-color: #252533;
+    color: #ffffff;
 }
 
-/* Left highlight on hover */
-tbody tr:hover td:first-child, tr:hover td:first-child {
-    box-shadow: inset 4px 0 0 var(--accent);
+/* Left highlight on hover (Fallback for box-shadow) */
+tbody tr:hover td:first-child {
+    border-left: 4px solid #ff8a00;
 }
 
 /* Top 3 Ranks (First Column) */
-tbody tr:nth-child(2) td:first-child { color: var(--rank-1); text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); font-size: 18px; }
-tbody tr:nth-child(3) td:first-child { color: var(--rank-2); text-shadow: 0 0 10px rgba(227, 227, 227, 0.5); font-size: 17px; }
-tbody tr:nth-child(4) td:first-child { color: var(--rank-3); text-shadow: 0 0 10px rgba(205, 127, 50, 0.5); font-size: 16px; }
+tbody tr:nth-child(2) td:first-child {
+    color: #FFD700;
+    font-size: 18px;
+}
 
-/* Top 3 Player Names with Stars (Replacing Image Medals) */
-tbody tr:nth-child(2) td:nth-child(2) { color: var(--rank-1); font-weight: 800; }
-tbody tr:nth-child(2) td:nth-child(2)::before { content: "★ "; }
+tbody tr:nth-child(3) td:first-child {
+    color: #E3E3E3;
+    font-size: 17px;
+}
 
-tbody tr:nth-child(3) td:nth-child(2) { color: var(--rank-2); font-weight: 800; }
-tbody tr:nth-child(3) td:nth-child(2)::before { content: "★ "; }
+tbody tr:nth-child(4) td:first-child {
+    color: #CD7F32;
+    font-size: 16px;
+}
 
-tbody tr:nth-child(4) td:nth-child(2) { color: var(--rank-3); font-weight: 800; }
-tbody tr:nth-child(4) td:nth-child(2)::before { content: "★ "; }
+/* Top 3 Player Names with Stars */
+tbody tr:nth-child(2) td:nth-child(2) {
+    color: #FFD700;
+    font-weight: 800;
+}
+
+tbody tr:nth-child(3) td:nth-child(2) {
+    color: #E3E3E3;
+    font-weight: 800;
+}
+
+tbody tr:nth-child(4) td:nth-child(2) {
+    color: #CD7F32;
+    font-weight: 800;
+}
 
 /* Default Name Color */
-td:nth-child(2) { color: #fff; }
+td:nth-child(2) {
+    color: #ffffff;
+}
 
-/* Skill Icons (Replacing Images with Colors and Dots) */
-#Lm, #L, #Lp { color: #aaaaaa; }
-#Lm::before { content: "• "; color: #777; }
-#L::before  { content: "• "; color: #aaa; }
-#Lp::before { content: "• "; color: #ccc; }
+/* Skill Icons */
+#Lm,
+#L,
+#Lp {
+    color: #aaaaaa;
+}
 
-#Mm, #M, #Mp { color: #55ff55; }
-#Mm::before { content: "• "; color: #22aa22; }
-#M::before  { content: "• "; color: #55ff55; }
-#Mp::before { content: "• "; color: #88ff88; }
+#Lm::before {
+    content: "• ";
+    color: #777777;
+}
 
-#Hm, #H, #Hp { color: #ffff55; }
-#Hm::before { content: "• "; color: #aaaa22; }
-#H::before  { content: "• "; color: #ffff55; }
-#Hp::before { content: "• "; color: #ffff88; }
+#L::before {
+    content: "• ";
+    color: #aaaaaa;
+}
 
-#Pm, #P, #Pp { color: #ff5555; }
-#Pm::before { content: "• "; color: #aa2222; }
-#P::before  { content: "• "; color: #ff5555; }
-#Pp::before { content: "• "; color: #ff8888; }
+#Lp::before {
+    content: "• ";
+    color: #cccccc;
+}
 
-#G { color: #ff55ff; text-shadow: 0 0 5px #ff55ff; font-weight: 800; }
-#G::before { content: "★ "; color: #ff55ff; }
+#Mm,
+#M,
+#Mp {
+    color: #55ff55;
+}
+
+#Mm::before {
+    content: "• ";
+    color: #22aa22;
+}
+
+#M::before {
+    content: "• ";
+    color: #55ff55;
+}
+
+#Mp::before {
+    content: "• ";
+    color: #88ff88;
+}
+
+#Hm,
+#H,
+#Hp {
+    color: #ffff55;
+}
+
+#Hm::before {
+    content: "• ";
+    color: #aaaa22;
+}
+
+#H::before {
+    content: "• ";
+    color: #ffff55;
+}
+
+#Hp::before {
+    content: "• ";
+    color: #ffff88;
+}
+
+#Pm,
+#P,
+#Pp {
+    color: #ff5555;
+}
+
+#Pm::before {
+    content: "• ";
+    color: #aa2222;
+}
+
+#P::before {
+    content: "• ";
+    color: #ff5555;
+}
+
+#Pp::before {
+    content: "• ";
+    color: #ff8888;
+}
+
+#G {
+    color: #ff55ff;
+    font-weight: 800;
+}
+
+#G::before {
+    content: "★ ";
+    color: #ff55ff;
+}
 
 /* Specific elements from aes_fork.css */
-.q, #q { border: 1px solid #4a4945; }
-.b, #b { background: #2a2a2a; }
-.iN { color: #FF0000; }
-.iY { color: #008000; }
+.q,
+#q {
+    border: 1px solid #4a4945;
+}
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: var(--bg-panel); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+.b,
+#b {
+    background-color: #2a2a2a;
+}
+
+.iN {
+    color: #FF0000;
+}
+
+.iY {
+    color: #008000;
+}
